@@ -2,55 +2,48 @@
     <p>Twitter Clone</p>
     <div>
         <p>Search</p>
-        <select >
-            <div>
-                <option value=""></option>
-            </div>
+        <select (change)="getUser($event)">   
+                <option selected *ngFor="let user of users"  value="{{user.id}}" >{{user.name}}</option>
         </select>
     </div>
-   
 </div>
-
-<div>
-    <div>
-        <img src="" alt="">
-        <p>@samantha</p>
-        <p>ramirp.info</p>
-        <P>Face to face ...</P>
-        <p>Location</p>
-    </div>
-    <div class="content">
-        <div class="post-div">
-            <h2>Posts</h2>
-            <div class="card">
-                <img src="" alt="">
-                <div>
-                    <p>Name</p>
-                    <p>app-display-posts</p>
-                    <div>
-                        <p>200</p>
-                        <p>200</p>
-                        <p>200</p>
-                    </div>
-                </div>
-            </div>
-
-        <div class="comments-div">
-            <div class="card">
-                <img src="" alt="">
-                <div>
-                    <p>Name</p>
-                    <p>app-display-posts</p>
-                    <div>
-                        <p>200</p>
-                        <p>200</p>
-                        <p>200</p>
-                    </div>
-                </div>
-            </div>
-
+    <div class="app">
+        <div class="cover">
+            <img class="cover" src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D" alt="cover image">
         </div>
+
+        <div class="profile" >
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="profile id (1)">
+            
+                <h3>{{displayedUser.name}}</h3>
+                <p>{{displayedUser.username}}</p>
+                <p>{{displayedUser.email}}</p>
+                <p></p>
+                <p>{{displayedUser.address.city}}</p>
         </div>
+
         
     </div>
-</div>
+    <div class="posts">
+            
+        <div class="post" *ngFor="let post of posts">
+            <div class="img">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="profile id (1)">
+            </div>
+            <div class="comment">
+                <p class="name">{{post.title}} </p>
+                <p>{{post.body}}</p>
+                <div class="icons" >
+                    <p> 200</p>
+                    <p>200</p>
+                    <p>200</p>
+                </div>
+            </div>
+        </div> 
+
+
+
+
+    
+    </div>
+   
