@@ -27,7 +27,7 @@ export class DisplayPostsComponent implements OnInit {
       this.displayedUser = selectedUser
       this.posts.find(p =>{
         p.userId === this.displayedUser.id
-        // this.comments.find(c =>c.postId === p.id)
+        this.comments.find(c =>c.postId === p.id)
       })
     }
 
@@ -45,7 +45,7 @@ export class DisplayPostsComponent implements OnInit {
       this.posts.find(p =>{
         p.userId === this.displayedUser.id
         //get comments
-        // this.comments.find(c =>c.postId === p.id)
+        this.comments.find(c =>c.postId === p.id)
     
       })
   })
