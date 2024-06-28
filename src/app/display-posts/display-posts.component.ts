@@ -44,13 +44,13 @@ export class DisplayPostsComponent implements OnInit {
       this.posts = posts
       this.posts.find(p =>{
         p.userId === this.displayedUser.id
+        //get comments
         this.comments.find(c =>c.postId === p.id)
     
       })
   })
   this.ts.getPostComments().subscribe(comments=>{
     this.comments = comments
-  
 })
 }
 }
